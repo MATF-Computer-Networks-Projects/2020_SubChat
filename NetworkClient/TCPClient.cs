@@ -7,29 +7,44 @@ using System.Threading;
 
 namespace NetworkClient
 {
-    // State object for receiving data from remote device.  
+    // Message object for receiving data from remote device.
     public class Message
     {
         // Size of receive buffer.
-        public const int bufferSize = 256;
+        public const int bufferSize = 1024;
 
         // Receive buffer.
-        public byte[] buffer = new byte[bufferSize];
+        private byte[] _buffer = new byte[bufferSize];
+        public byte[] Buffer
+        {
+            get => _buffer;
+        }
 
         // Received data string.
-        public StringBuilder sb = new StringBuilder();
+        private StringBuilder _store = new StringBuilder();
+        public StringBuilder Store
+        {
+            get => _store;
+            set => _store = value;
+        }
+
 
         // Client socket.
-        public Socket workSocket = null;
+        private Socket _workSocket = null;
+        public Socket WorkSocket
+        {
+            get => _workSocket;
+            set => _workSocket = value;
+        }
     }
 
     class TCPClient
     {
 
         // ManualResetEvent instances signal completion.
-        private static ManualResetEvent connectionSignaler = new ManualResetEvent(false);
-        private static ManualResetEvent sendSignaler = new ManualResetEvent(false);
-        private static ManualResetEvent receiveSignaler = new ManualResetEvent(false);
+        private ManualResetEvent _connectionSignaler;
+        private ManualResetEvent _sendSignaler;
+        private ManualResetEvent _receiveSignaler;
 
         // The port number for the remote device.
         private int _port;
@@ -38,17 +53,20 @@ namespace NetworkClient
         private String _host;
 
         // The response from the remote device.
-        private String response = String.Empty;
+        private String _response = String.Empty;
 
         public TCPClient(String host, int port)
         {
+            _connectionSignaler = new ManualResetEvent(false);
+            _sendSignaler = new ManualResetEvent(false);
+            _receiveSignaler = new ManualResetEvent(false);
             _host = host;
             _port = port;
         }
 
         public void Start()
         {
-            // Connect to a remote device.  
+            // Connect to a remote device.
             try
             {
                 // Establish the remote endpoint for the socket.
@@ -62,18 +80,18 @@ namespace NetworkClient
 
                 // Connect to the remote endpoint.
                 client.BeginConnect(remoteEP, new AsyncCallback(ConnectCallback), client);
-                connectionSignaler.WaitOne();
+                _connectionSignaler.WaitOne();
 
                 // Send test data to the remote device.
                 Send(client, "Some random text.<EOF>");
-                sendSignaler.WaitOne();
+                _sendSignaler.WaitOne();
 
-                // Receive the response from the remote device.
+                // Receive the _response from the remote device.
                 Receive(client);
-                receiveSignaler.WaitOne();
+                _receiveSignaler.WaitOne();
 
                 // Write the response to the console.
-                Console.WriteLine("Response received : {0}", response);
+                Console.WriteLine("Response received : {0}", _response);
 
                 // Release the socket.
                 client.Shutdown(SocketShutdown.Both);
@@ -89,7 +107,7 @@ namespace NetworkClient
         {
             try
             {
-                // Retrieve the socket from the state object.
+                // Retrieve the socket from the Message object.
                 Socket client = (Socket)ar.AsyncState;
 
                 // Complete the connection.
@@ -98,7 +116,7 @@ namespace NetworkClient
                 Console.WriteLine("Socket connected to {0}", client.RemoteEndPoint.ToString());
 
                 // Signal that the connection has been made.
-                connectionSignaler.Set();
+                _connectionSignaler.Set();
             }
             catch (Exception e)
             {
@@ -110,12 +128,11 @@ namespace NetworkClient
         {
             try
             {
-                // Create the state object.
-                Message state = new Message();
-                state.workSocket = client;
+                Message msg = new Message();
+                msg.WorkSocket = client;
 
                 // Begin receiving the data from the remote device.
-                client.BeginReceive(state.buffer, 0, Message.bufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+                client.BeginReceive(msg.Buffer, 0, Message.bufferSize, 0, new AsyncCallback(ReceiveCallback), msg);
             }
             catch (Exception e)
             {
@@ -127,9 +144,9 @@ namespace NetworkClient
         {
             try
             {
-                // Retrieve the state object and the client socket from the async state object.
-                Message state = (Message)ar.AsyncState;
-                Socket client = state.workSocket;
+                // Retrieve the message and the client socket from the async Message object.
+                Message msg = (Message)ar.AsyncState;
+                Socket client = msg.WorkSocket;
 
                 // Read data from the remote device.
                 int bytesRead = client.EndReceive(ar);
@@ -137,21 +154,21 @@ namespace NetworkClient
                 if (bytesRead > 0)
                 {
                     // There might be more data, so store the data received so far.
-                    state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
+                    msg.Store.Append(Encoding.ASCII.GetString(msg.Buffer, 0, bytesRead));
 
                     // Get the rest of the data.
-                    client.BeginReceive(state.buffer, 0, Message.bufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+                    client.BeginReceive(msg.Buffer, 0, Message.bufferSize, 0, new AsyncCallback(ReceiveCallback), msg);
                 }
                 else
                 {
-                    // All the data has arrived; put it in response.
-                    if (state.sb.Length > 1)
+                    // All the data has arrived; put it in _response.
+                    if (msg.Store.Length > 1)
                     {
-                        response = state.sb.ToString();
+                        _response = msg.Store.ToString();
                     }
 
                     // Signal that all bytes have been received.
-                    receiveSignaler.Set();
+                    _receiveSignaler.Set();
                 }
             }
             catch (Exception e)
@@ -173,7 +190,7 @@ namespace NetworkClient
         {
             try
             {
-                // Retrieve the socket from the state object.
+                // Retrieve the socket from the Message object.
                 Socket client = (Socket)ar.AsyncState;
 
                 // Complete sending the data to the remote device.
@@ -181,7 +198,7 @@ namespace NetworkClient
                 Console.WriteLine("Sent {0} bytes to server.", bytesSent);
 
                 // Signal that all bytes have been sent.
-                sendSignaler.Set();
+                _sendSignaler.Set();
             }
             catch (Exception e)
             {

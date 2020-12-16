@@ -7,35 +7,51 @@ using System.Net.Sockets;
 
 namespace NetworkServer
 {
+    // Message object for sending data from remote device.
     public class Message
     {
         // Size of receive buffer.
         public const int bufferSize = 1024;
 
         // Receive buffer.
-        public byte[] buffer = new byte[bufferSize];
+        private byte[] _buffer = new byte[bufferSize];
+        public byte[] Buffer
+        {
+            get => _buffer;
+        }
 
         // Received data string.
-        public StringBuilder sb = new StringBuilder();
+        private StringBuilder _store = new StringBuilder();
+        public StringBuilder Store
+        {
+            get => _store;
+            set => _store = value;
+        }
+
 
         // Client socket.
-        public Socket workSocket = null;
+        private Socket _workSocket = null;
+        public Socket WorkSocket
+        {
+            get => _workSocket;
+            set => _workSocket = value;
+        }
     }
 
     class TCPServer
     {
-
         // Thread signal.
-        public static ManualResetEvent connectionSignaler = new ManualResetEvent(false);
+        private ManualResetEvent _connectionSignaler;
 
         // The port number for the remote device.
-        private int _port;
+        private int _port { get; }
 
         // The IP adress of host.
-        private String _host;
+        private String _host { get; }
 
         public TCPServer(String host, int port)
         {
+            _connectionSignaler = new ManualResetEvent(false);
             _host = host;
             _port = port;
         }
@@ -60,14 +76,14 @@ namespace NetworkServer
                 while (true)
                 {
                     // Set the event to nonsignaled state.
-                    connectionSignaler.Reset();
+                    _connectionSignaler.Reset();
 
                     // Start an asynchronous socket to listen for connections.
                     Console.WriteLine("Waiting for a connection...");
                     listener.BeginAccept(new AsyncCallback(AcceptCallback), listener);
 
                     // Wait until a connection is made before continuing.
-                    connectionSignaler.WaitOne();
+                    _connectionSignaler.WaitOne();
                 }
 
             }
@@ -76,45 +92,43 @@ namespace NetworkServer
                 Console.WriteLine(e.ToString());
             }
 
-            Console.WriteLine("\nPress ENTER to continue...");
+            Console.WriteLine("Press ENTER to continue...");
             Console.Read();
         }
 
         public void AcceptCallback(IAsyncResult ar)
         {
             // Signal the main thread to continue.
-            connectionSignaler.Set();
+            _connectionSignaler.Set();
 
             // Get the socket that handles the client request.
             Socket listener = (Socket)ar.AsyncState;
             Socket handler = listener.EndAccept(ar);
 
-            // Create the state object.  
-            Message state = new Message();
-            state.workSocket = handler;
-            handler.BeginReceive(state.buffer, 0, Message.bufferSize, 0, new AsyncCallback(ReadCallback), state);
+            // Receiving message from client.
+            Message msg = new Message();
+            msg.WorkSocket = handler;
+            handler.BeginReceive(msg.Buffer, 0, Message.bufferSize, 0, new AsyncCallback(ReadCallback), msg);
         }
 
         public void ReadCallback(IAsyncResult ar)
         {
             String content = String.Empty;
 
-            // Retrieve the state object and the handler socket
-            // from the asynchronous state object.
-            Message state = (Message)ar.AsyncState;
-            Socket handler = state.workSocket;
+            // Retrieve the message and the handler socket from the async Message object.
+            Message msg = (Message)ar.AsyncState;
+            Socket handler = msg.WorkSocket;
 
             // Read data from the client socket.
             int bytesRead = handler.EndReceive(ar);
 
             if (bytesRead > 0)
             {
-                // There  might be more data, so store the data received so far.
-                state.sb.Append(Encoding.ASCII.GetString(
-                    state.buffer, 0, bytesRead));
+                // There might be more data, so store the data received so far.
+                msg.Store.Append(Encoding.ASCII.GetString(msg.Buffer, 0, bytesRead));
 
                 // Check for end-of-file tag. If it is not there, read more data.
-                content = state.sb.ToString();
+                content = msg.Store.ToString();
                 if (content.IndexOf("<EOF>") > -1)
                 {
                     // All the data has been read from the client.
@@ -127,8 +141,7 @@ namespace NetworkServer
                 else
                 {
                     // Not all data received. Get more.
-                    handler.BeginReceive(state.buffer, 0, Message.bufferSize, 0,
-                    new AsyncCallback(ReadCallback), state);
+                    handler.BeginReceive(msg.Buffer, 0, Message.bufferSize, 0, new AsyncCallback(ReadCallback), msg);
                 }
             }
         }
@@ -139,8 +152,7 @@ namespace NetworkServer
             byte[] byteData = Encoding.ASCII.GetBytes(data);
 
             // Begin sending the data to the remote device.
-            handler.BeginSend(byteData, 0, byteData.Length, 0,
-                new AsyncCallback(SendCallback), handler);
+            handler.BeginSend(byteData, 0, byteData.Length, 0, new AsyncCallback(SendCallback), handler);
         }
 
         private void SendCallback(IAsyncResult ar)

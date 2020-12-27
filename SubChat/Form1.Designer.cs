@@ -50,18 +50,20 @@ namespace SubChat
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(146, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(128, 40);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 51);
+            this.pictureBox1.Size = new System.Drawing.Size(48, 51);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(37, 168);
+            this.pictureBox2.Location = new System.Drawing.Point(32, 117);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(31, 35);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -73,9 +75,10 @@ namespace SubChat
             this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbUsername.ForeColor = System.Drawing.Color.White;
             this.tbUsername.HideSelection = false;
-            this.tbUsername.Location = new System.Drawing.Point(90, 168);
+            this.tbUsername.Location = new System.Drawing.Point(79, 126);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(231, 31);
+            this.tbUsername.Size = new System.Drawing.Size(202, 25);
             this.tbUsername.TabIndex = 2;
             this.tbUsername.TabStop = false;
             this.tbUsername.Text = "Username";
@@ -86,9 +89,10 @@ namespace SubChat
             // 
             this.panelUsername.BackColor = System.Drawing.Color.White;
             this.panelUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelUsername.Location = new System.Drawing.Point(37, 208);
+            this.panelUsername.Location = new System.Drawing.Point(32, 156);
+            this.panelUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelUsername.Name = "panelUsername";
-            this.panelUsername.Size = new System.Drawing.Size(260, 3);
+            this.panelUsername.Size = new System.Drawing.Size(228, 3);
             this.panelUsername.TabIndex = 4;
             // 
             // panelPassword
@@ -96,16 +100,18 @@ namespace SubChat
             this.panelPassword.BackColor = System.Drawing.Color.White;
             this.panelPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPassword.Controls.Add(this.button1);
-            this.panelPassword.Location = new System.Drawing.Point(37, 274);
+            this.panelPassword.Location = new System.Drawing.Point(32, 206);
+            this.panelPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPassword.Name = "panelPassword";
-            this.panelPassword.Size = new System.Drawing.Size(260, 3);
+            this.panelPassword.Size = new System.Drawing.Size(228, 3);
             this.panelPassword.TabIndex = 7;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.Size = new System.Drawing.Size(82, 22);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -116,9 +122,10 @@ namespace SubChat
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbPassword.ForeColor = System.Drawing.Color.White;
-            this.tbPassword.Location = new System.Drawing.Point(90, 234);
+            this.tbPassword.Location = new System.Drawing.Point(79, 176);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(231, 31);
+            this.tbPassword.Size = new System.Drawing.Size(202, 25);
             this.tbPassword.TabIndex = 6;
             this.tbPassword.Text = "Password";
             this.tbPassword.Click += new System.EventHandler(this.tbPassword_Click);
@@ -127,9 +134,10 @@ namespace SubChat
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(37, 234);
+            this.pictureBox3.Location = new System.Drawing.Point(32, 176);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 26);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
@@ -138,9 +146,10 @@ namespace SubChat
             this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(154)))), ((int)(((byte)(206)))));
             this.btnLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnLogIn.Location = new System.Drawing.Point(39, 315);
+            this.btnLogIn.Location = new System.Drawing.Point(34, 236);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(259, 45);
+            this.btnLogIn.Size = new System.Drawing.Size(227, 34);
             this.btnLogIn.TabIndex = 8;
             this.btnLogIn.Text = "Sign In";
             this.btnLogIn.UseVisualStyleBackColor = false;
@@ -148,9 +157,9 @@ namespace SubChat
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(303, 9);
+            this.label1.Location = new System.Drawing.Point(265, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 20);
+            this.label1.Size = new System.Drawing.Size(14, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -160,9 +169,10 @@ namespace SubChat
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(38, 376);
+            this.button2.Location = new System.Drawing.Point(33, 282);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 45);
+            this.button2.Size = new System.Drawing.Size(228, 34);
             this.button2.TabIndex = 10;
             this.button2.Text = "Register";
             this.button2.UseVisualStyleBackColor = false;
@@ -170,10 +180,10 @@ namespace SubChat
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(333, 511);
+            this.ClientSize = new System.Drawing.Size(291, 383);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogIn);
@@ -186,6 +196,7 @@ namespace SubChat
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

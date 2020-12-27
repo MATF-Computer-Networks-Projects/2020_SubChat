@@ -17,51 +17,6 @@ namespace SubChat
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-           Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tbPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbUsername_Click(object sender, EventArgs e)
         {
             tbUsername.Clear();
@@ -76,6 +31,44 @@ namespace SubChat
             tbPassword.PasswordChar = '*';
             panelPassword.ForeColor = Color.FromArgb(78, 184, 206);
             tbPassword.ForeColor = Color.FromArgb(78, 184, 206);
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            string username = tbUsername.Text.Trim();
+            string password = tbPassword.Text.Trim();
+
+            // TODO
+            // Check1: does that user exists 
+            // Check2: does he input right password
+
+            //if(check1 & check2)
+            //Form2 MainWindow = new Form2(username);
+            //this.Hide();
+            //MainWindow.Show();
+
+            //else
+            string msg = "You need to register first!";
+            string title = "Logging fails";
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            MessageBox.Show(msg, title,buttons, MessageBoxIcon.Warning);
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            string username = tbUsername.Text.Trim();
+            string password = tbPassword.Text.Trim();
+            // TODO
+            // Add new user in data base of all users [ send username and password ]
+
+            Form2 MainWindow = new Form2(username);
+            this.Hide();
+            MainWindow.Show();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

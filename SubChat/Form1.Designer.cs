@@ -39,8 +39,8 @@ namespace SubChat
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnLogIn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lblExit = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPassword.SuspendLayout();
@@ -64,7 +64,6 @@ namespace SubChat
             this.pictureBox2.Size = new System.Drawing.Size(35, 34);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // tbUsername
             // 
@@ -80,7 +79,6 @@ namespace SubChat
             this.tbUsername.TabStop = false;
             this.tbUsername.Text = "Username";
             this.tbUsername.Click += new System.EventHandler(this.tbUsername_Click);
-            this.tbUsername.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // panelUsername
             // 
@@ -122,7 +120,6 @@ namespace SubChat
             this.tbPassword.TabIndex = 6;
             this.tbPassword.Text = "Password";
             this.tbPassword.Click += new System.EventHandler(this.tbPassword_Click);
-            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // pictureBox3
             // 
@@ -144,29 +141,30 @@ namespace SubChat
             this.btnLogIn.TabIndex = 8;
             this.btnLogIn.Text = "Sign In";
             this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
-            // label1
+            // lblExit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(303, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblExit.AutoSize = true;
+            this.lblExit.Location = new System.Drawing.Point(303, 9);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(18, 20);
+            this.lblExit.TabIndex = 9;
+            this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
-            // button2
+            // btnRegister
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(38, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 45);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Register";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(38, 376);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(260, 45);
+            this.btnRegister.TabIndex = 10;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // Form1
             // 
@@ -174,8 +172,8 @@ namespace SubChat
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(333, 511);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.lblExit);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.panelPassword);
             this.Controls.Add(this.tbPassword);
@@ -189,7 +187,6 @@ namespace SubChat
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPassword.ResumeLayout(false);
@@ -210,8 +207,8 @@ namespace SubChat
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblExit;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
 

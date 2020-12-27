@@ -3,6 +3,8 @@ namespace SubChat
 {
     partial class Form2
     {
+        private string _username;
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -19,6 +21,11 @@ namespace SubChat
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public Form2(string username)
+        {
+            _username = username;
         }
 
         #region Windows Form Designer generated code

@@ -41,6 +41,8 @@ namespace SubChat
             this.btnLogIn = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblEsc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPassword.SuspendLayout();
@@ -50,18 +52,18 @@ namespace SubChat
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(146, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(150, 50);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 51);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 68);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(37, 168);
+            this.pictureBox2.Location = new System.Drawing.Point(37, 156);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 47);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
@@ -94,7 +96,7 @@ namespace SubChat
             this.panelPassword.BackColor = System.Drawing.Color.White;
             this.panelPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPassword.Controls.Add(this.button1);
-            this.panelPassword.Location = new System.Drawing.Point(37, 274);
+            this.panelPassword.Location = new System.Drawing.Point(37, 275);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(260, 3);
             this.panelPassword.TabIndex = 7;
@@ -114,7 +116,7 @@ namespace SubChat
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbPassword.ForeColor = System.Drawing.Color.White;
-            this.tbPassword.Location = new System.Drawing.Point(90, 234);
+            this.tbPassword.Location = new System.Drawing.Point(90, 235);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(231, 31);
             this.tbPassword.TabIndex = 6;
@@ -124,9 +126,9 @@ namespace SubChat
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(37, 234);
+            this.pictureBox3.Location = new System.Drawing.Point(37, 235);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
@@ -145,33 +147,50 @@ namespace SubChat
             // 
             // lblExit
             // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.Location = new System.Drawing.Point(303, 9);
+            this.lblExit.Location = new System.Drawing.Point(0, 0);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(18, 20);
-            this.lblExit.TabIndex = 9;
-            this.lblExit.Text = "X";
-            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            this.lblExit.Size = new System.Drawing.Size(100, 23);
+            this.lblExit.TabIndex = 12;
             // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(38, 376);
+            this.btnRegister.Location = new System.Drawing.Point(39, 371);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(260, 45);
+            this.btnRegister.Size = new System.Drawing.Size(259, 51);
             this.btnRegister.TabIndex = 10;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            // 
+            // lblEsc
+            // 
+            this.lblEsc.AutoSize = true;
+            this.lblEsc.Location = new System.Drawing.Point(303, 9);
+            this.lblEsc.Name = "lblEsc";
+            this.lblEsc.Size = new System.Drawing.Size(18, 20);
+            this.lblEsc.TabIndex = 11;
+            this.lblEsc.Text = "X";
+            this.lblEsc.Click += new System.EventHandler(this.lblEsc_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(333, 511);
+            this.ClientSize = new System.Drawing.Size(343, 553);
+            this.Controls.Add(this.lblEsc);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.btnLogIn);
@@ -209,6 +228,8 @@ namespace SubChat
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEsc;
     }
 }
 

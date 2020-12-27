@@ -66,7 +66,7 @@ namespace SubChat
             MainWindow.Show();
         }
 
-        private void lblExit_Click(object sender, EventArgs e)
+        private void lblEsc_Click(object sender, EventArgs e)
         {
             this.Close();
         }

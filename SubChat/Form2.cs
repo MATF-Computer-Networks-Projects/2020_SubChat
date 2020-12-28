@@ -59,5 +59,34 @@ namespace SubChat
         {
             labelFilterSub.ForeColor = Color.FromArgb(255, 255, 255);
         }
+
+        private void labelFindUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreateGroup_Click(object sender, EventArgs e)
+        {
+            Form createGroupWindow = new FormCreateGroup();
+            createGroupWindow.Show();
+        }
+
+        private void btnAddSub_Click(object sender, EventArgs e)
+        {
+            Form addSubWindow = new FormAddSub();
+            addSubWindow.Show();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            Form filterWindow = new FormFilter();
+            filterWindow.Show();
+        }
+
+        private void btnFindUser_Click(object sender, EventArgs e)
+        {
+            Form findUserWindow = new FormFindUser();
+            findUserWindow.Show();
+        }
     }
 }

@@ -43,15 +43,18 @@ namespace SubChat
             // Check2: does he input right password
 
             //if(check1 & check2)
-            //Form2 MainWindow = new Form2(username);
-            //this.Hide();
-            //MainWindow.Show();
+            Form2 MainWindow = new Form2(username);
+            MainWindow.Show();
+            this.Hide();
+            
 
             //else
+            /*
             string msg = "You need to register first!";
             string title = "Logging fails";
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
             MessageBox.Show(msg, title,buttons, MessageBoxIcon.Warning);
+            */
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -61,9 +64,10 @@ namespace SubChat
             // TODO
             // Add new user in data base of all users [ send username and password ]
 
-            Form2 MainWindow = new Form2(username);
-            this.Hide();
+            Form MainWindow = new Form2(username);
             MainWindow.Show();
+            this.Hide();
+            
         }
 
         private void lblEsc_Click(object sender, EventArgs e)

@@ -19,5 +19,11 @@ namespace SubChat
         {
             this.Close();
         }
+
+        private void lblEsc_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

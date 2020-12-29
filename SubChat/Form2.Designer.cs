@@ -41,6 +41,9 @@ namespace SubChat
             this.sidePanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chatPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panelChat = new System.Windows.Forms.Panel();
             this.btnClsoe = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.btnFindUser = new System.Windows.Forms.PictureBox();
@@ -54,6 +57,8 @@ namespace SubChat
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.chatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFindUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFilter)).BeginInit();
@@ -64,9 +69,10 @@ namespace SubChat
             // sidePanel
             // 
             this.sidePanel.AutoScroll = true;
-            this.sidePanel.Location = new System.Drawing.Point(18, 75);
+            this.sidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sidePanel.Location = new System.Drawing.Point(18, 87);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(194, 454);
+            this.sidePanel.Size = new System.Drawing.Size(194, 442);
             this.sidePanel.TabIndex = 5;
             // 
             // pictureBox1
@@ -80,10 +86,41 @@ namespace SubChat
             // 
             // chatPanel
             // 
+            this.chatPanel.Controls.Add(this.pictureBox2);
+            this.chatPanel.Controls.Add(this.textBox1);
+            this.chatPanel.Controls.Add(this.panelChat);
             this.chatPanel.Location = new System.Drawing.Point(226, 75);
             this.chatPanel.Name = "chatPanel";
             this.chatPanel.Size = new System.Drawing.Size(630, 454);
             this.chatPanel.TabIndex = 6;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(587, 408);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.textBox1.Location = new System.Drawing.Point(0, 408);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Insert text";
+            this.textBox1.Size = new System.Drawing.Size(579, 33);
+            this.textBox1.TabIndex = 1;
+            // 
+            // panelChat
+            // 
+            this.panelChat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChat.Location = new System.Drawing.Point(0, 12);
+            this.panelChat.Name = "panelChat";
+            this.panelChat.Size = new System.Drawing.Size(628, 380);
+            this.panelChat.TabIndex = 0;
             // 
             // btnClsoe
             // 
@@ -244,6 +281,9 @@ namespace SubChat
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SubChat";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.chatPanel.ResumeLayout(false);
+            this.chatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFindUser)).EndInit();
@@ -272,5 +312,8 @@ namespace SubChat
         private System.Windows.Forms.Label labelCreateGroup;
         private System.Windows.Forms.PictureBox btnCreateGroup;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panelChat;
     }
 }

@@ -15,9 +15,9 @@ namespace SubChat
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void lblEsc_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

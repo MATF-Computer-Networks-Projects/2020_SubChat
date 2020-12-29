@@ -52,6 +52,7 @@ namespace SubChat
             this.btnCreateGroup = new System.Windows.Forms.PictureBox();
             this.labelFindUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFindUser)).BeginInit();
@@ -89,7 +90,7 @@ namespace SubChat
             this.btnClsoe.AutoSize = true;
             this.btnClsoe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClsoe.ForeColor = System.Drawing.Color.White;
-            this.btnClsoe.Location = new System.Drawing.Point(856, 5);
+            this.btnClsoe.Location = new System.Drawing.Point(850, 4);
             this.btnClsoe.Name = "btnClsoe";
             this.btnClsoe.Size = new System.Drawing.Size(15, 15);
             this.btnClsoe.TabIndex = 10;
@@ -218,6 +219,14 @@ namespace SubChat
             this.panel1.Size = new System.Drawing.Size(835, 2);
             this.panel1.TabIndex = 12;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(871, 545);
+            this.flowLayoutPanel1.TabIndex = 12;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -228,6 +237,7 @@ namespace SubChat
             this.Controls.Add(this.btnClsoe);
             this.Controls.Add(this.chatPanel);
             this.Controls.Add(this.sidePanel);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Padding = new System.Windows.Forms.Padding(15, 25, 15, 15);
@@ -261,5 +271,6 @@ namespace SubChat
         private System.Windows.Forms.PictureBox btnAddSub;
         private System.Windows.Forms.Label labelCreateGroup;
         private System.Windows.Forms.PictureBox btnCreateGroup;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

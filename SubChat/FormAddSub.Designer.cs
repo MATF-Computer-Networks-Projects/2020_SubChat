@@ -38,7 +38,9 @@ namespace SubChat
             this.lbSelect = new System.Windows.Forms.ListBox();
             this.labelSelect = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNew)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -47,7 +49,7 @@ namespace SubChat
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(71, 311);
+            this.btnAdd.Location = new System.Drawing.Point(49, 310);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(223, 34);
             this.btnAdd.TabIndex = 19;
@@ -59,7 +61,7 @@ namespace SubChat
             this.btnClsoe.AutoSize = true;
             this.btnClsoe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClsoe.ForeColor = System.Drawing.Color.White;
-            this.btnClsoe.Location = new System.Drawing.Point(297, 9);
+            this.btnClsoe.Location = new System.Drawing.Point(282, 7);
             this.btnClsoe.Name = "btnClsoe";
             this.btnClsoe.Size = new System.Drawing.Size(15, 15);
             this.btnClsoe.TabIndex = 20;
@@ -69,7 +71,7 @@ namespace SubChat
             // pictureNew
             // 
             this.pictureNew.Image = ((System.Drawing.Image)(resources.GetObject("pictureNew.Image")));
-            this.pictureNew.Location = new System.Drawing.Point(70, 49);
+            this.pictureNew.Location = new System.Drawing.Point(48, 48);
             this.pictureNew.Name = "pictureNew";
             this.pictureNew.Size = new System.Drawing.Size(40, 40);
             this.pictureNew.TabIndex = 21;
@@ -81,7 +83,7 @@ namespace SubChat
             this.tbAdd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbAdd.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbAdd.ForeColor = System.Drawing.Color.White;
-            this.tbAdd.Location = new System.Drawing.Point(113, 60);
+            this.tbAdd.Location = new System.Drawing.Point(91, 59);
             this.tbAdd.Name = "tbAdd";
             this.tbAdd.Size = new System.Drawing.Size(181, 23);
             this.tbAdd.TabIndex = 22;
@@ -91,7 +93,7 @@ namespace SubChat
             // panelAdd
             // 
             this.panelAdd.BackColor = System.Drawing.Color.White;
-            this.panelAdd.Location = new System.Drawing.Point(70, 87);
+            this.panelAdd.Location = new System.Drawing.Point(48, 86);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(228, 2);
             this.panelAdd.TabIndex = 23;
@@ -111,7 +113,7 @@ namespace SubChat
             "User2",
             "User3",
             "User4"});
-            this.lbSelect.Location = new System.Drawing.Point(71, 157);
+            this.lbSelect.Location = new System.Drawing.Point(48, 152);
             this.lbSelect.Name = "lbSelect";
             this.lbSelect.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbSelect.Size = new System.Drawing.Size(222, 147);
@@ -125,7 +127,7 @@ namespace SubChat
             this.labelSelect.AutoSize = true;
             this.labelSelect.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSelect.ForeColor = System.Drawing.Color.White;
-            this.labelSelect.Location = new System.Drawing.Point(71, 135);
+            this.labelSelect.Location = new System.Drawing.Point(49, 132);
             this.labelSelect.Name = "labelSelect";
             this.labelSelect.Size = new System.Drawing.Size(150, 17);
             this.labelSelect.TabIndex = 25;
@@ -134,33 +136,43 @@ namespace SubChat
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(74, 153);
+            this.panel1.Location = new System.Drawing.Point(52, 150);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(145, 2);
             this.panel1.TabIndex = 26;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.labelSelect);
+            this.panel2.Controls.Add(this.lbSelect);
+            this.panel2.Controls.Add(this.panelAdd);
+            this.panel2.Controls.Add(this.tbAdd);
+            this.panel2.Controls.Add(this.pictureNew);
+            this.panel2.Controls.Add(this.btnClsoe);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(308, 428);
+            this.panel2.TabIndex = 27;
             // 
             // FormAddSub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(344, 432);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.labelSelect);
-            this.Controls.Add(this.lbSelect);
-            this.Controls.Add(this.panelAdd);
-            this.Controls.Add(this.tbAdd);
-            this.Controls.Add(this.pictureNew);
-            this.Controls.Add(this.btnClsoe);
-            this.Controls.Add(this.btnAdd);
+            this.ClientSize = new System.Drawing.Size(314, 432);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormAddSub";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddSub";
             ((System.ComponentModel.ISupportInitialize)(this.pictureNew)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -174,5 +186,6 @@ namespace SubChat
         private System.Windows.Forms.Label labelSelect;
         private System.Windows.Forms.Panel panelAdd;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\David\Desktop\SubChat\NetworkServer\bin\Debug\netcoreapp3.1\NetworkServer.exe
+C:\Users\David\Desktop\SubChat\NetworkServer\bin\Debug\netcoreapp3.1\NetworkServer.deps.json
+C:\Users\David\Desktop\SubChat\NetworkServer\bin\Debug\netcoreapp3.1\NetworkServer.runtimeconfig.json
+C:\Users\David\Desktop\SubChat\NetworkServer\bin\Debug\netcoreapp3.1\NetworkServer.runtimeconfig.dev.json
+C:\Users\David\Desktop\SubChat\NetworkServer\bin\Debug\netcoreapp3.1\NetworkServer.dll
+C:\Users\David\Desktop\SubChat\NetworkServer\bin\Debug\netcoreapp3.1\NetworkServer.pdb
+C:\Users\David\Desktop\SubChat\NetworkServer\obj\Debug\netcoreapp3.1\NetworkServer.csprojAssemblyReference.cache
+C:\Users\David\Desktop\SubChat\NetworkServer\obj\Debug\netcoreapp3.1\NetworkServer.AssemblyInfoInputs.cache
+C:\Users\David\Desktop\SubChat\NetworkServer\obj\Debug\netcoreapp3.1\NetworkServer.AssemblyInfo.cs
+C:\Users\David\Desktop\SubChat\NetworkServer\obj\Debug\netcoreapp3.1\NetworkServer.csproj.CoreCompileInputs.cache
+C:\Users\David\Desktop\SubChat\NetworkServer\obj\Debug\netcoreapp3.1\NetworkServer.dll
+C:\Users\David\Desktop\SubChat\NetworkServer\obj\Debug\netcoreapp3.1\NetworkServer.pdb
+C:\Users\David\Desktop\SubChat\NetworkServer\obj\Debug\netcoreapp3.1\NetworkServer.genruntimeconfig.cache

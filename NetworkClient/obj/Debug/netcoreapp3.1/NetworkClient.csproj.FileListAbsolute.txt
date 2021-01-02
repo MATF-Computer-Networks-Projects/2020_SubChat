@@ -1,0 +1,13 @@
+C:\Users\David\Desktop\SubChat\NetworkClient\bin\Debug\netcoreapp3.1\NetworkClient.exe
+C:\Users\David\Desktop\SubChat\NetworkClient\bin\Debug\netcoreapp3.1\NetworkClient.deps.json
+C:\Users\David\Desktop\SubChat\NetworkClient\bin\Debug\netcoreapp3.1\NetworkClient.runtimeconfig.json
+C:\Users\David\Desktop\SubChat\NetworkClient\bin\Debug\netcoreapp3.1\NetworkClient.runtimeconfig.dev.json
+C:\Users\David\Desktop\SubChat\NetworkClient\bin\Debug\netcoreapp3.1\NetworkClient.dll
+C:\Users\David\Desktop\SubChat\NetworkClient\bin\Debug\netcoreapp3.1\NetworkClient.pdb
+C:\Users\David\Desktop\SubChat\NetworkClient\obj\Debug\netcoreapp3.1\NetworkClient.csprojAssemblyReference.cache
+C:\Users\David\Desktop\SubChat\NetworkClient\obj\Debug\netcoreapp3.1\NetworkClient.AssemblyInfoInputs.cache
+C:\Users\David\Desktop\SubChat\NetworkClient\obj\Debug\netcoreapp3.1\NetworkClient.AssemblyInfo.cs
+C:\Users\David\Desktop\SubChat\NetworkClient\obj\Debug\netcoreapp3.1\NetworkClient.csproj.CoreCompileInputs.cache
+C:\Users\David\Desktop\SubChat\NetworkClient\obj\Debug\netcoreapp3.1\NetworkClient.dll
+C:\Users\David\Desktop\SubChat\NetworkClient\obj\Debug\netcoreapp3.1\NetworkClient.pdb
+C:\Users\David\Desktop\SubChat\NetworkClient\obj\Debug\netcoreapp3.1\NetworkClient.genruntimeconfig.cache

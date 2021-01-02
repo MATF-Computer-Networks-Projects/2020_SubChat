@@ -38,12 +38,18 @@ namespace SubChat
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.sidePanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chatPanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.btnSend = new System.Windows.Forms.PictureBox();
+            this.tbInput = new System.Windows.Forms.TextBox();
             this.panelChat = new System.Windows.Forms.Panel();
+            this.Chat = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClsoe = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.btnFindUser = new System.Windows.Forms.PictureBox();
@@ -54,11 +60,16 @@ namespace SubChat
             this.labelCreateGroup = new System.Windows.Forms.Label();
             this.btnCreateGroup = new System.Windows.Forms.PictureBox();
             this.labelFindUser = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.chatPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelUnderline = new System.Windows.Forms.Panel();
+            this.panelBorder = new System.Windows.Forms.FlowLayoutPanel();
+            this.Other = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Me = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sidePanel = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSend)).BeginInit();
+            this.panelChat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Chat)).BeginInit();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFindUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFilter)).BeginInit();
@@ -66,61 +77,110 @@ namespace SubChat
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateGroup)).BeginInit();
             this.SuspendLayout();
             // 
-            // sidePanel
+            // Logo
             // 
-            this.sidePanel.AutoScroll = true;
-            this.sidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sidePanel.Location = new System.Drawing.Point(18, 87);
-            this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(194, 442);
-            this.sidePanel.TabIndex = 5;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(-1, -3);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(210, 50);
+            this.Logo.TabIndex = 0;
+            this.Logo.TabStop = false;
             // 
-            // pictureBox1
+            // panelMain
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panelMain.Controls.Add(this.btnSend);
+            this.panelMain.Controls.Add(this.tbInput);
+            this.panelMain.Controls.Add(this.panelChat);
+            this.panelMain.Location = new System.Drawing.Point(226, 75);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(630, 454);
+            this.panelMain.TabIndex = 6;
             // 
-            // chatPanel
+            // btnSend
             // 
-            this.chatPanel.Controls.Add(this.pictureBox2);
-            this.chatPanel.Controls.Add(this.textBox1);
-            this.chatPanel.Controls.Add(this.panelChat);
-            this.chatPanel.Location = new System.Drawing.Point(226, 75);
-            this.chatPanel.Name = "chatPanel";
-            this.chatPanel.Size = new System.Drawing.Size(630, 454);
-            this.chatPanel.TabIndex = 6;
+            this.btnSend.Image = ((System.Drawing.Image)(resources.GetObject("btnSend.Image")));
+            this.btnSend.Location = new System.Drawing.Point(587, 408);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(32, 32);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.TabStop = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // pictureBox2
+            // tbInput
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(587, 408);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.textBox1.Location = new System.Drawing.Point(0, 408);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Insert text";
-            this.textBox1.Size = new System.Drawing.Size(579, 33);
-            this.textBox1.TabIndex = 1;
+            this.tbInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.tbInput.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbInput.ForeColor = System.Drawing.Color.SeaGreen;
+            this.tbInput.Location = new System.Drawing.Point(0, 408);
+            this.tbInput.Name = "tbInput";
+            this.tbInput.PlaceholderText = "Insert text";
+            this.tbInput.Size = new System.Drawing.Size(579, 33);
+            this.tbInput.TabIndex = 1;
             // 
             // panelChat
             // 
-            this.panelChat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChat.Controls.Add(this.Chat);
             this.panelChat.Location = new System.Drawing.Point(0, 12);
             this.panelChat.Name = "panelChat";
             this.panelChat.Size = new System.Drawing.Size(628, 380);
             this.panelChat.TabIndex = 0;
+            // 
+            // Chat
+            // 
+            this.Chat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.Chat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Chat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Chat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Chat.ColumnHeadersVisible = false;
+            this.Chat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn1});
+            this.Chat.Location = new System.Drawing.Point(-1, -1);
+            this.Chat.MultiSelect = false;
+            this.Chat.Name = "Chat";
+            this.Chat.ReadOnly = true;
+            this.Chat.RowHeadersVisible = false;
+            this.Chat.RowTemplate.Height = 30;
+            this.Chat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Chat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.Chat.ShowCellErrors = false;
+            this.Chat.ShowCellToolTips = false;
+            this.Chat.ShowEditingIcon = false;
+            this.Chat.ShowRowErrors = false;
+            this.Chat.Size = new System.Drawing.Size(628, 378);
+            this.Chat.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Other";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 302;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn1.HeaderText = "me";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 302;
             // 
             // btnClsoe
             // 
@@ -144,8 +204,8 @@ namespace SubChat
             this.menuPanel.Controls.Add(this.labelCreateGroup);
             this.menuPanel.Controls.Add(this.btnCreateGroup);
             this.menuPanel.Controls.Add(this.labelFindUser);
-            this.menuPanel.Controls.Add(this.panel1);
-            this.menuPanel.Controls.Add(this.pictureBox1);
+            this.menuPanel.Controls.Add(this.panelUnderline);
+            this.menuPanel.Controls.Add(this.Logo);
             this.menuPanel.Location = new System.Drawing.Point(19, 28);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(836, 47);
@@ -248,21 +308,59 @@ namespace SubChat
             this.labelFindUser.Text = "Find user";
             this.labelFindUser.Click += new System.EventHandler(this.labelFindUser_Click);
             // 
-            // panel1
+            // panelUnderline
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 45);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 2);
-            this.panel1.TabIndex = 12;
+            this.panelUnderline.BackColor = System.Drawing.Color.White;
+            this.panelUnderline.Location = new System.Drawing.Point(0, 45);
+            this.panelUnderline.Name = "panelUnderline";
+            this.panelUnderline.Size = new System.Drawing.Size(835, 2);
+            this.panelUnderline.TabIndex = 12;
             // 
-            // flowLayoutPanel1
+            // panelBorder
             // 
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(871, 545);
-            this.flowLayoutPanel1.TabIndex = 12;
+            this.panelBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBorder.Location = new System.Drawing.Point(1, 2);
+            this.panelBorder.Name = "panelBorder";
+            this.panelBorder.Size = new System.Drawing.Size(871, 545);
+            this.panelBorder.TabIndex = 12;
+            this.panelBorder.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBorder_Paint);
+            // 
+            // Other
+            // 
+            this.Other.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Other.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Other.HeaderText = "";
+            this.Other.Name = "Other";
+            this.Other.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Other.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Me
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Me.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Me.HeaderText = "";
+            this.Me.Name = "Me";
+            this.Me.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Me.Width = 314;
+            // 
+            // sidePanel
+            // 
+            this.sidePanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sidePanel.AutoScroll = true;
+            this.sidePanel.Location = new System.Drawing.Point(18, 87);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(194, 442);
+            this.sidePanel.TabIndex = 5;
             // 
             // Form2
             // 
@@ -272,18 +370,20 @@ namespace SubChat
             this.ClientSize = new System.Drawing.Size(874, 547);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.btnClsoe);
-            this.Controls.Add(this.chatPanel);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.sidePanel);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panelBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Padding = new System.Windows.Forms.Padding(15, 25, 15, 15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SubChat";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.chatPanel.ResumeLayout(false);
-            this.chatPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            this.panelMain.ResumeLayout(false);
+            this.panelMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSend)).EndInit();
+            this.panelChat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Chat)).EndInit();
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFindUser)).EndInit();
@@ -296,13 +396,11 @@ namespace SubChat
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel sidePanel;
-        private System.Windows.Forms.Panel chatPanel;
+        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label btnClsoe;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Panel menuPanel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelUnderline;
         private System.Windows.Forms.Label labelFindUser;
         private System.Windows.Forms.PictureBox btnFindUser;
         private System.Windows.Forms.Label labelFilterSub;
@@ -311,9 +409,15 @@ namespace SubChat
         private System.Windows.Forms.PictureBox btnAddSub;
         private System.Windows.Forms.Label labelCreateGroup;
         private System.Windows.Forms.PictureBox btnCreateGroup;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.FlowLayoutPanel panelBorder;
+        private System.Windows.Forms.PictureBox btnSend;
+        private System.Windows.Forms.TextBox tbInput;
         private System.Windows.Forms.Panel panelChat;
+        private System.Windows.Forms.DataGridView Chat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Other;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Me;
+        private System.Windows.Forms.Panel sidePanel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

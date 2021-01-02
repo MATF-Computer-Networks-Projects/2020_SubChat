@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 
 namespace SubChat
 {
+
     public partial class Form2 : Form
-    {
+    { 
+
         public Form2()
         {
             InitializeComponent();
         }
+
 
         private void btnClsoe_Click(object sender, EventArgs e)
         {
@@ -88,5 +92,77 @@ namespace SubChat
             Form findUserWindow = new FormFindUser();
             findUserWindow.Show();
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            // get words from input box
+            string[] text = tbInput.Text.Split(" ");
+
+            // if user didn't write antyhing we don't write empty string so just return
+            if (text.Length == 0)
+                return;
+
+            Chat.Rows.Add(" ", "Me:");
+
+            // variables for row breaks
+            int row_length = 0;
+            string text_for_one_row = "";
+
+             foreach(string word in text){
+
+                // +1 is for space that goes behind word
+                row_length += word.Length + 1;
+
+                 // if the length of row is greater then row size
+                if(row_length >= 37)
+                {
+                    // write row text
+                    Chat.Rows.Add(" ", text_for_one_row);
+                    
+                    // prepare text for new row
+                    text_for_one_row = "";
+                    text_for_one_row += word + " ";
+
+                    // set new row size
+                    // +1 is for space
+                    row_length = word.Length +1;
+                }
+                else
+                {
+                    // if the word can be stored in row without row break
+                    text_for_one_row += word + " ";
+                }
+
+             }
+
+             // write whatever has left unwritten
+             Chat.Rows.Add(" " ,text_for_one_row);
+
+            // always show last row
+             Chat.FirstDisplayedScrollingRowIndex = Chat.RowCount - 1;
+        }
+
+        private void panelBorder_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = new Button();
+            Button btn2 = new Button();
+            btn2.Location = new Point(btn.Location.X, btn.Location.Y + btn.Height);
+
+            sidePanel.Controls.Add(btn);
+            sidePanel.Controls.Add(btn2);
+
+        }
     }
+
+    public class RoundButton : Button
+    {
+        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+        {
+            GraphicsPath grPath = new GraphicsPath();
+            grPath.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
+            this.Region = new System.Drawing.Region(grPath);
+            base.OnPaint(e);
+        }
+    }
+
 }

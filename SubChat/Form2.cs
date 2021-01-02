@@ -144,6 +144,7 @@ namespace SubChat
 
         private void panelBorder_Paint(object sender, PaintEventArgs e)
         {
+            // this is just test example, need to be removed once function for groups reading is finished
             Button btn = new Button();
             Button btn2 = new Button();
             btn2.Location = new Point(btn.Location.X, btn.Location.Y + btn.Height);
